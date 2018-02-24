@@ -9,7 +9,7 @@ class BitbucketApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "Flutter Demo",
+      title: "Bucketeer",
       theme: new ThemeData(
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white
