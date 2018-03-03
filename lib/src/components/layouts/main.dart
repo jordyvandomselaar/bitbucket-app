@@ -14,7 +14,7 @@ class Main extends StatelessWidget {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Bitbucket App"),
+        title: new Text("Bucketeer"),
       ),
       drawer: new Container(
         color: Theme
