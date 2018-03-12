@@ -11,8 +11,8 @@ class BitbucketApp extends StatelessWidget {
     return new MaterialApp(
       title: "Bucketeer",
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
-        backgroundColor: Colors.white
+          primarySwatch: Colors.blue,
+          backgroundColor: Colors.white
       ),
       home: new home.Index(),
       routes: <String, WidgetBuilder>{
