@@ -16,7 +16,7 @@ class BitbucketApp extends StatelessWidget {
       ),
       home: new home.Index(),
       routes: <String, WidgetBuilder>{
-        "/repositories": (BuildContext context) => new Index(),
+        "/repositories": (_) => new Index(),
       },
     );
   }
