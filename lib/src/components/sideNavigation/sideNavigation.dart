@@ -1,3 +1,4 @@
+import 'package:bitbucket_app/auth/oAuth.dart';
 import 'package:bitbucket_app/env/env.dart';
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart" show launch;
@@ -21,7 +22,8 @@ class SideNavigation extends StatelessWidget {
           new ListTile(
             title: new Text("Login"),
             onTap: () async {
-              await launch(await Env.get("url"), forceWebView: true);
+              OAuth.startServer(context);
+              await launch(await Env.get("url"));
             },
           )
         ],

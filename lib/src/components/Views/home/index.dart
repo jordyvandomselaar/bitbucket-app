@@ -4,6 +4,7 @@ import 'package:bitbucket_app/src/components/Views/home/components/pullRequestLi
 import 'package:bitbucket_app/src/components/layouts/main.dart';
 import "package:bitbucket_app/src/components/typography/subTitle.dart" as typography;
 import "package:bitbucket_app/src/components/typography/title.dart" as typography;
+import 'package:bitbucket_app/src/state/auth.dart';
 import 'package:flutter/material.dart';
 
 class Index extends StatelessWidget {
@@ -16,6 +17,11 @@ class Index extends StatelessWidget {
               new Card(
                   child: new Column(
                     children: <Widget>[
+                      new Text(Auth
+                          .of(context)
+                          .token
+                          .value),
+                      new Text("Token above me."),
                       const typography.SubTitle("Your Pull requests"),
                       new PullRequestList(
                         projects: <Project>[
