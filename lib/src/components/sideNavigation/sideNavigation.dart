@@ -1,5 +1,6 @@
 import 'package:bitbucket_app/auth/oAuth.dart';
 import 'package:bitbucket_app/env/env.dart';
+import 'package:bitbucket_app/src/state/auth.dart';
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart" show launch;
 
@@ -19,13 +20,27 @@ class SideNavigation extends StatelessWidget {
             title: new Text("Repositories"),
             onTap: () => Navigator.pushNamed(context, "/repositories"),
           ),
-          new ListTile(
+          (() =>
+          Auth
+              .of(context)
+              .token
+              .value != ""
+              ? new ListTile(
+            title: new Text("Logout"),
+            onTap: () {
+              Auth
+                  .of(context)
+                  .token
+                  .value = "";
+            },
+          )
+              : new ListTile(
             title: new Text("Login"),
             onTap: () async {
               OAuth.startServer(context);
               await launch(await Env.get("url"));
             },
-          )
+          ))()
         ],
       ),
     );

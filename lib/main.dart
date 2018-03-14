@@ -6,7 +6,7 @@ import "package:flutter/material.dart";
 void main() => runApp(new BitbucketApp());
 
 class BitbucketApp extends StatefulWidget {
-  ValueNotifier<String> authToken = new ValueNotifier<String>("");
+  final ValueNotifier<String> authToken = new ValueNotifier<String>("");
 
   @override
   State createState() => new _State();
